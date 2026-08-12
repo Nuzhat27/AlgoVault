@@ -49,6 +49,17 @@ app.use(
 
 app.use(express.json({ limit: "2mb" }));
 
+
+// ===============================
+// ROOT
+// ===============================
+
+app.get("/", (req, res) => {
+  res.status(200).json({
+    message: "AlgoFlow API is running",
+  });
+});
+
 // ===============================
 // HEALTH CHECK
 // ===============================
