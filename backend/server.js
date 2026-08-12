@@ -13,6 +13,11 @@ const evaluateRoutes = require("./routes/evaluateRoutes");
 
 const app = express();
 
+app.get("/", (req, res) => {
+  res.status(200).json({
+    message: "AlgoFlow API is running",
+  });
+});
 const PORT = Number(process.env.PORT) || 5001;
 
 const CLIENT_URL =
