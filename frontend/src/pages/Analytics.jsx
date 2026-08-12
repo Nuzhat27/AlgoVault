@@ -1,0 +1,12 @@
+import { useMemo } from 'react';
+import { useData } from '../context/DataContext';
+import { TopicsChart, DifficultyChart, TrendChart } from '../components/DashboardCharts';
+
+export default function Analytics(){
+ const {problems,mockSessions}=useData();
+ const solved=problems.filter(p=>['Solved','Solved-Optimally','Mastered'].includes(p.status)).length;
+ const avg=useMemo(()=>{const e=problems.flatMap(p=>p.evaluations||[]);return e.length?(e.reduce((a,x)=>a+(x.report?.overallScore||0),0)/e.length).toFixed(1):'—'},[problems]);
+ const sessions=problems.reduce((n,p)=>n+(p.practiceSessions?.length||0),0)+mockSessions.length;
+ const revisits=problems.filter(p=>p.status==='Needs Revisit').length;
+ return <section className="view"><div className="page-head"><div><span className="eyebrow">ANALYTICS</span><h1>See where your effort compounds</h1><div className="sub">A practical snapshot of activity, difficulty and weak spots.</div></div></div><div className="analytics-kpis"><div className="analytics-kpi"><strong>{problems.length}</strong><span>Problems logged</span></div><div className="analytics-kpi"><strong>{solved}</strong><span>Problems solved</span></div><div className="analytics-kpi"><strong>{sessions}</strong><span>Practice sessions</span></div><div className="analytics-kpi"><strong>{avg}</strong><span>Average evaluation</span></div></div><div className="grid2"><div className="card chart-card"><div className="card-heading"><div><span className="section-kicker">TOPICS</span><h3>Topic distribution</h3></div></div><TopicsChart problems={problems}/></div><div className="card chart-card"><div className="card-heading"><div><span className="section-kicker">DIFFICULTY</span><h3>Difficulty mix</h3></div></div><DifficultyChart problems={problems}/></div></div><div className="card chart-card" style={{marginTop:18}}><div className="card-heading"><div><span className="section-kicker">WEEKLY TREND</span><h3>Problems solved over time</h3></div></div><TrendChart problems={problems}/></div><div className="feature-hub"><div className="feature-card"><div className="feature-icon">!</div><h3>{revisits} weak spots</h3><p>Problems currently marked Needs Revisit.</p></div><div className="feature-card"><div className="feature-icon">↗</div><h3>Keep the slope up</h3><p>Consistent weekly sessions are more valuable than occasional bursts.</p></div><div className="feature-card"><div className="feature-icon">◎</div><h3>Use Active Recall</h3><p>Convert solved problems into retrieval practice before interviews.</p></div></div></section>
+}

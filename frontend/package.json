@@ -1,0 +1,31 @@
+{
+  "name": "ship-it-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@uiw/react-codemirror": "^4.23.0",
+    "@codemirror/lang-python": "^6.1.6",
+    "@codemirror/lang-javascript": "^6.2.2",
+    "@codemirror/lang-java": "^6.0.1",
+    "@codemirror/lang-cpp": "^6.0.2",
+    "@codemirror/lang-go": "^6.0.1",
+    "@uiw/codemirror-theme-dracula": "^4.23.0",
+    "axios": "^1.7.2",
+    "chart.js": "^4.4.4",
+    "react-chartjs-2": "^5.2.0",
+    "marked": "^12.0.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.24.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.3.4"
+  }
+}
