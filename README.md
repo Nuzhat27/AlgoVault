@@ -20,7 +20,7 @@ AlgoVault is a full-stack coding interview preparation platform for practicing D
 - Theme support
 
 ## Tech Stack
-**Frontend:** React, Vite, React Router, Redux/Redux Toolkit, Axios, Tailwind CSS
+**Frontend:** React, Vite, React Router, Axios, Tailwind CSS
 **Backend:** Node.js, Express.js, MongoDB, Mongoose, JWT
 
 ## Project Structure
