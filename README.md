@@ -1,6 +1,6 @@
-# AlgoFlow
+# AlgoVault
 
-AlgoFlow is a full-stack coding interview preparation platform for practicing DSA problems, learning coding patterns, tracking practice, scheduling reviews, and conducting mock interviews.
+AlgoVault is a full-stack coding interview preparation platform for practicing DSA problems, learning coding patterns, tracking practice, scheduling reviews, and conducting mock interviews.
 
 ## 🔗 Live Demo
 
@@ -25,7 +25,7 @@ AlgoFlow is a full-stack coding interview preparation platform for practicing DS
 
 ## Project Structure
 ```text
-AlgoFlow/
+AlgoVault/
 ├── client/       # React + Vite frontend
 ├── server/       # Node.js + Express backend
 ├── .gitignore
@@ -95,7 +95,7 @@ Main API areas:
 JWT authentication is used for protected requests.
 
 ## Deployment
-AlgoFlow uses:
+AlgoVault uses:
 - **Frontend:** Vercel — [algo-vault-iota.vercel.app](https://algo-vault-iota.vercel.app/)
 - **Backend:** Render — [algovault-j8pm.onrender.com](https://algovault-j8pm.onrender.com)
 - **Database:** MongoDB Atlas
